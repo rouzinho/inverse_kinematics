@@ -1,0 +1,9 @@
+yarpserver &
+sleep 2
+
+tilix -a session-add-down -x "iCub_SIM &" 
+sleep 1
+
+tilix -a app-new-window -x "/home/altair/PhD/Codes/iCub/inverse_kinematics/controllers"
+
+

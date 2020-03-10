@@ -1,0 +1,8 @@
+tilix -a session-add-down -x "yarprobotinterface --context simCartesianControl &"
+sleep 3
+
+tilix -a session-add-down -x "iKinCartesianSolver --context simCartesianControl --part right_arm &"
+sleep 4
+
+tilix -a session-add-down -x "iKinGazeCtrl --from configSim.ini &"
+
