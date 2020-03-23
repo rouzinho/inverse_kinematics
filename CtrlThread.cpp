@@ -106,7 +106,7 @@ bool CtrlThread::threadInit()
     xd.resize(3);
     od.resize(4);
     fp.resize(3);
-
+    //gaze fixation point
     fp[0] = -0.50;                                    // x-component [m]
     fp[1] = 0.00;                                    // y-component [m]
     fp[2] = -0.10;                                    // z-component [m]
@@ -168,9 +168,9 @@ void CtrlThread::generateTarget()
     xd[0] = stof(s);
     s = in->get(1).toString();
     xd[1] = stof(s);
-    //s = in->get(2).toString();
-    //xd[2] = stof(s);
-    xd[2] = 0.05;
+    s = in->get(2).toString();
+    xd[2] = stof(s);
+    //xd[2] = 0.05;
 
     fp[0] = -0.50;                                    // x-component [m]
     fp[1] = 0.00;                                    // y-component [m]
@@ -254,6 +254,8 @@ void CtrlThread::printStatus()
         t1=t;
     }
 }
+
+//init the world and robot for the sake of our experiment
 
 void CtrlThread::initWorld()
 {
